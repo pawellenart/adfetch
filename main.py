@@ -25,7 +25,7 @@ def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
 
     body = [
     title_widget,
-    urwid.Text("Press F10 to quit", align='center'),
+    urwid.Text("Press F8 to quit", align='center'),
         urwid.Divider(),
         urwid.Text("Target ADF download directory:"),
         urwid.AttrMap(target_directory_edit, 'reversed'),
@@ -183,5 +183,5 @@ top = urwid.Overlay(
 )
 
 palette = [("reversed", "standout", "")]
-loop = urwid.MainLoop(top, palette=palette, unhandled_input=lambda key: key == "f10" and exit_program(None))
+loop = urwid.MainLoop(top, palette=palette, unhandled_input=lambda key: key == "f8" and exit_program(None))
 loop.run()
